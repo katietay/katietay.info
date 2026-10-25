@@ -9,6 +9,12 @@ const SNAPS = [
   { src: "/images/needle.jpg", h: 1067, cap: "the Space Needle, through the trees", alt: "The Space Needle seen from below, framed by green trees and a blue sky" },
 ];
 
+const BOARDS = [
+  { src: "/images/whiteboard-trees.jpg", h: 460, cap: "expression trees: prefix, infix and postfix", alt: "Whiteboard with a hand-drawn expression tree for (a+b)*c+7, and the same expression written three ways: prefix, infix and postfix" },
+  { src: "/images/whiteboard-grid.jpg", h: 556, cap: "walking a grid with nested loops", alt: "Whiteboard with a grid of rows and columns, a nested for loop that checks array cells, and notes on checking cells in a line" },
+  { src: "/images/whiteboard-steps.jpg", h: 624, cap: "a classroom joke I kept", alt: "Whiteboard reading: 3 steps to being a good programmer. 1) avoid recursion 2) repeat steps 1 and 2 3) always have an exit condition 4) beware of being off by one" },
+];
+
 // One thread: teacher, then builder, then how the first shapes the second.
 export default function About() {
   return (
@@ -47,6 +53,39 @@ export default function About() {
           <figcaption>two bachelor's degrees and a teaching credential</figcaption>
         </figure>
       </div>
+
+      <div className="about-top">
+        <figure className="photo" style={{ "--tilt": "1.8deg" }}>
+          <img
+            src="/images/classroom.jpg"
+            width="1000"
+            height="750"
+            alt="Katie, in a black mask and brown glasses with green hair, taking a selfie in her Montessori classroom, with wooden shelves, plants, globes and a peach wall behind her"
+            loading="lazy"
+          />
+          <figcaption>my classroom, my last year teaching</figcaption>
+        </figure>
+        <section className="block first" aria-labelledby="s2b-h">
+          <h2 id="s2b-h">The classroom I left</h2>
+          <p>This is my classroom from my last year of teaching, with hands-on materials on low shelves, plants, and a globe within reach. Every shelf was set up so a child could choose work, carry it to a table and put it back without asking for help.</p>
+          <p>I took that way of working with me. Watch what people actually do, remove what gets in the way, and build the space so they can do it themselves.</p>
+        </section>
+      </div>
+
+      <section className="block" aria-labelledby="s2c-h">
+        <h2 id="s2c-h">Back in school, on the other side of the desk</h2>
+        <p>Studying computer science at Colorado State meant being a beginner again after years of being the one with the answers. These are a few of the whiteboards from that time: expression trees, grids and nested loops, and a joke about recursion that stuck with me.</p>
+        <ul className="snaps boards">
+          {BOARDS.map((b, i) => (
+            <li key={b.src}>
+              <figure className="photo" style={{ "--tilt": `${[-1.8, 1.5, -1.2][i]}deg` }}>
+                <img src={b.src} width="1000" height={b.h} alt={b.alt} loading="lazy" />
+                <figcaption>{b.cap}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="block" aria-labelledby="s3-h">
         <h2 id="s3-h">What teaching taught me about building</h2>
