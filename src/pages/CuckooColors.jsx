@@ -17,9 +17,24 @@ export default function CuckooColors() {
   return (
     <Deck tapeId="portfolio" title="Cuckoo Colors" kicker="Project demo">
       <p className="lede">
-        Cuckoo Colors makes color coordinate activities: a printable grid that students paint cell
-        by cell with a chosen set of colors. It has keyboard support, labelled controls, high
-        contrast and a print layout.
+        Cuckoo Colors makes printable activity sheets for vision therapy. You paint a pattern on a
+        grid, and the app lists the cells for each color (for example "Red: A1, B3"). A person then
+        recreates the pattern from the list, which exercises visual tracking and scanning. It is
+        built to be accessible, with keyboard support, labelled controls, color names beside every
+        swatch, high contrast and a clean print layout.
+      </p>
+
+      <h2>Why I built it</h2>
+      <p>
+        Therapists and parents often make these sheets by hand, which is slow and easy to get
+        wrong. This generates one in seconds, in any size, with the colors you choose.
+      </p>
+
+      <h2>Try it</h2>
+      <p>
+        Launch the app, pick a number of rows, columns and colors, and press Generate. The color
+        list is shared, and you can suggest a new color yourself. Suggestions are checked for
+        offensive names, limited per person, and removed automatically after a few days.
       </p>
 
       <p className="proj-actions">
