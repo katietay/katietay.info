@@ -4,17 +4,15 @@ DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
 
     # The Cuckoo Colors app lives in /colors/ with its own .htaccess. Leave it alone.
     RewriteRule ^colors(/|$) - [L]
 
-    # Real files and folders are served as they are.
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^ - [L]
-
-    # Everything else is a client-side route (/resume, /cuckoo-colors, ...).
-    RewriteRule ^ index.html [L]
+    # Anything that is not a real file or folder is a client-side route (/resume, /cuckoo-colors, ...).
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
 </IfModule>
 
 # Never serve hidden files (except .well-known).
