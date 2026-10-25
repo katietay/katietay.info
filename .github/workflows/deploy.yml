@@ -1,0 +1,81 @@
+name: Build and deploy to IONOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm audit --omit=dev
+      - run: npm run build
+      - name: Check the build output
+        run: |
+          test -f dist/index.html
+          test -f dist/.htaccess
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: dist
+          include-hidden-files: true
+          if-no-files-found: error
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # Secrets are only set on this repository, never exposed to forks or pull requests.
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: dist
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+      - name: Upload over SFTP
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
+          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
+          SFTP_REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+          for v in SFTP_HOST SFTP_USER SFTP_PRIVATE_KEY SFTP_KNOWN_HOSTS SFTP_REMOTE_DIR; do
+            if [ -z "${!v}" ]; then echo "Missing secret: $v"; exit 1; fi
+          done
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$SFTP_PRIVATE_KEY" > ~/.ssh/deploy_key
+          printf '%s\n' "$SFTP_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
+          REMOTE="${SFTP_REMOTE_DIR%/}"
+          # The Cuckoo Colors app lives in /colors/ on the same host, so this job never deletes at the
+          # web root. Only dist/assets is mirrored with --delete (it holds old hashed files).
+          # index.html goes last so visitors never get a page that points at missing files.
+          lftp -e "
+            set sftp:connect-program 'ssh -a -x -i $HOME/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts';
+            set net:max-retries 3;
+            set cmd:fail-exit yes;
+            open -u '$SFTP_USER,x' sftp://$SFTP_HOST;
+            mirror -R --parallel=2 --delete dist/assets '$REMOTE/assets';
+            mirror -R --parallel=2 --exclude-glob index.html --exclude-glob .htaccess --exclude-glob assets/ dist '$REMOTE';
+            put dist/.htaccess -o '$REMOTE/.htaccess';
+            put dist/index.html -o '$REMOTE/index.html';
+            bye
+          "
+          rm -f ~/.ssh/deploy_key

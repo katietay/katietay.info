@@ -99,3 +99,27 @@ Recheck when content changes: run axe (the axe DevTools browser extension works)
 `npm run build` creates `dist/`. Upload the contents of `dist/` (including the hidden `.htaccess`) to the site's web root. The Cuckoo Colors app is uploaded separately to `/colors/` (see its repository); the `.htaccess` here leaves that folder alone and adds security headers and the single-page-app fallback.
 
 Hidden demo page: `/cuckoo-colors` (not in the tape menu, linked from Portfolio).
+
+## Automatic deploy to IONOS
+
+Pushing to `main` runs `.github/workflows/deploy.yml`: it installs dependencies, audits them, builds the site and uploads `dist/` to the IONOS web root over SFTP. Deleting happens only inside `assets/`, so the Cuckoo Colors app in `/colors/` is never touched.
+
+Add these under Settings, Secrets and variables, Actions, Repository secrets:
+
+| Secret | Value |
+| --- | --- |
+| `SFTP_HOST` | SFTP host from the IONOS control panel (`access....webspace-data.io`) |
+| `SFTP_USER` | SFTP/SSH username |
+| `SFTP_PRIVATE_KEY` | Private half of a new key made only for deploys |
+| `SFTP_KNOWN_HOSTS` | The host's public key line (see below) |
+| `SFTP_REMOTE_DIR` | Web root on the server, usually `/` |
+
+Setup, on your computer:
+
+```bash
+ssh-keygen -t ed25519 -N "" -C "github-deploy" -f deploy_key   # makes deploy_key and deploy_key.pub
+ssh-copy-id -i deploy_key.pub USER@HOST                         # installs the public key on IONOS
+ssh-keyscan -t ed25519 HOST                                     # paste this line into SFTP_KNOWN_HOSTS
+```
+
+Compare the `ssh-keyscan` fingerprint with the one IONOS shows before trusting it. Delete the local `deploy_key` files after copying the private key into the secret. Run the workflow by hand from the Actions tab for the first test.
