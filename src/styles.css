@@ -752,3 +752,9 @@ html[data-effects="off"] .static { opacity: 0.5; }
 
 /* A single wide group photo, centered below its section. */
 .photo.group { width: min(100%, 560px); margin: 28px auto; }
+
+/* Photo walls: wrapped rows, centered, so a short last row sits in the middle. */
+.snaps.scrap { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 8px 28px; }
+.snaps.scrap > li { padding-top: 22px; margin: 0 0 20px; flex: 0 0 216px; max-width: 100%; }
+.snaps.scrap .photo { width: 100%; }
+.snaps.boards.scrap > li { flex-basis: 340px; }

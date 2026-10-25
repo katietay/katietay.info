@@ -89,6 +89,7 @@ export default function About() {
           <h2 id="s2-h">How I got into websites</h2>
           <p>In March 2020 my co-teacher and I had to move a hands-on classroom onto a screen. We built a distance-learning program for more than 50 students, with handmade replicas of Montessori materials and virtual breakout rooms.</p>
           <p>What surprised me was how much I liked the building. Friends who were software engineers told me I would be good at it. I started a computer science degree at Colorado State University in 2022, launched Katie Taylor Web Design that December, and graduated in August 2025.</p>
+          <p>Those three years were full. I worked as a web developer for Off-Campus Life, coordinated food operations for RamRide, and ran my own business, all while taking classes. It taught me to scope work honestly and to keep every project moving without letting anything drop.</p>
         </section>
         <figure className="photo" style={{ "--tilt": "-2.2deg" }}>
           <img
@@ -104,7 +105,7 @@ export default function About() {
       <section className="block" aria-labelledby="s2c-h">
         <h2 id="s2c-h">Back in school, on the other side of the desk</h2>
         <p>Studying computer science at Colorado State meant being a beginner again after years of being the one with the answers. These are a few of the whiteboards from that time: expression trees, grids and nested loops, and a joke about recursion that stuck with me.</p>
-        <ul className="snaps boards">
+        <ul className="snaps boards scrap">
           {BOARDS.map((b, i) => (
             <li key={b.src}>
               <figure className="photo" style={{ "--tilt": `${[-1.8, 1.5, -1.2][i]}deg` }}>
@@ -118,11 +119,13 @@ export default function About() {
 
       <section className="block" aria-labelledby="s3-h">
         <h2 id="s3-h">What teaching taught me about building</h2>
+        <p>Teaching and web design turned out to be the same job in a lot of ways. In both, the work is to make something clear for a person who is not you.</p>
         <ul className="plain-list">
           <li>I set a site up the way I used to set up a room, so a visitor can find what they need without asking anyone.</li>
           <li>I check in early and honestly, the way I did with families.</li>
           <li>I explain what I am doing in words anyone can follow.</li>
         </ul>
+        <p>Accessibility is where that shows up most. I build to WCAG 2.1 AA and aim higher where I can, because a site that only works for some people is not finished. Keyboard navigation, readable contrast, real headings and honest alt text are part of how I build, not extras I add at the end.</p>
         <p>I live in Redmond, Washington, and work with clients remotely. Most are schools, nonprofits, and small organizations with small teams and no in-house tech person.</p>
         <p className="cta-row">
           <Consult>Book a free consult</Consult>
@@ -130,9 +133,15 @@ export default function About() {
         </p>
       </section>
 
+      <section className="block" aria-labelledby="s5-h">
+        <h2 id="s5-h">What I build for fun</h2>
+        <p>Outside client work I build things I wish existed. KnightOwlChess is an open-source chess app designed around accessibility. Cuckoo Colors, from my CS degree, makes printable vision therapy activity sheets. I am also learning Blender for 3D modeling, and when I need a break from screens I cook.</p>
+        <p>If you have a project you are not sure how to start, I am happy to talk it through.</p>
+      </section>
+
       <section className="block" aria-labelledby="s4-h">
         <h2 id="s4-h">Snapshots</h2>
-        <ul className="snaps">
+        <ul className="snaps scrap">
           {SNAPS.map((s, i) => (
             <li key={s.src}>
               <figure className="photo" style={{ "--tilt": `${[-2, 1.8, 2.4, -1.6, 1.4][i]}deg` }}>
