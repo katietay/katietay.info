@@ -3,6 +3,7 @@ import Deck from "../components/Deck.jsx";
 import Consult from "../components/Consult.jsx";
 
 const SNAPS = [
+  { src: "/images/desk.jpg", h: 600, cap: "the desk", alt: "Katie working on a laptop in an armchair" },
   { src: "/images/seattle.jpg", h: 1067, cap: "Seattle, Rainier on a clear day", alt: "Seattle waterfront with a ferry at the dock, the stadiums behind it, and snow-covered Mount Rainier in the distance" },
   { src: "/images/peace.jpg", h: 1000, cap: "hi", alt: "Katie in a yellow beanie and glasses, squinting and flashing a peace sign" },
   { src: "/images/latte.jpg", h: 1067, cap: "good latte, good day", alt: "A latte in a white cup on a red saucer with a smiley face in the foam" },
@@ -24,35 +25,46 @@ export default function About() {
       <div className="about-top">
         <figure className="photo" style={{ "--tilt": "2deg" }}>
           <img
-            src="/images/desk.jpg"
-            width="1000"
-            height="750"
-            alt="Katie working on a laptop in an armchair"
+            src="/images/bridge.jpg"
+            width="800"
+            height="1000"
+            alt="A wooden footbridge with rust-red railings curving through trees with green and early autumn leaves, fallen leaves on the boards and shadows across the deck"
           />
-          <figcaption>the desk</figcaption>
+          <figcaption>a walk worth taking</figcaption>
         </figure>
         <section className="block first" aria-labelledby="s1-h">
           <h2 id="s1-h">Where I started</h2>
-          <p>From 2014 to 2022 I worked in Montessori schools in Texas and Colorado, first as an assistant and then as a lead guide for children in kindergarten through third grade. My first real look at Montessori was watching toddlers pour water into glass cups, set a table, and wash their own dishes. They were so little and so capable. I spent those years trying to honor that trust.</p>
+          <p>From 2015 to 2022 I worked in Montessori schools in Texas and Colorado, first as an assistant and then as a lead guide for children in kindergarten through third grade. My first real look at Montessori was watching toddlers pour water into glass cups, set a table, and wash their own dishes. They were so little and so capable. I spent those years trying to honor that trust.</p>
         </section>
       </div>
 
       <div className="about-top flip">
-        <section className="block first" aria-labelledby="s2-h">
-          <h2 id="s2-h">How I got into websites</h2>
-          <p>In March 2020 my co-teacher and I had to move a hands-on classroom onto a screen. We built a distance-learning program for more than 50 students, with handmade replicas of Montessori materials and virtual breakout rooms.</p>
-          <p>What surprised me was how much I liked the building. I had edited MySpace HTML as a teenager, and friends who were software engineers told me I would be good at it. I started a computer science degree at Colorado State University in 2022, launched Katie Taylor Web Design that December, and graduated in August 2025.</p>
+        <section className="block first" aria-labelledby="s1b-h">
+          <h2 id="s1b-h">Training at MECR</h2>
+          <p>I earned my AMS Elementary I credential in 2020 through the Montessori Education Center of the Rockies (MECR). Training meant learning every material by hand: practicing each lesson, building the sequences, and understanding why each one is shaped the way it is. These towers are from that time.</p>
         </section>
-        <figure className="photo" style={{ "--tilt": "-2.2deg" }}>
+        <figure className="photo" style={{ "--tilt": "-1.6deg" }}>
           <img
-            src="/images/degrees.jpg"
+            src="/images/towers.jpg"
             width="800"
-            height="1000"
-            alt="Katie standing on a lawn holding two bachelor's degrees and a Montessori teaching credential"
+            height="1067"
+            alt="A pink wooden tower of graduated cubes standing next to a tower of stacked, colored bead cubes on a woven mat on a low wooden table"
+            loading="lazy"
           />
-          <figcaption>two bachelor's degrees and a teaching credential</figcaption>
+          <figcaption>towers from training</figcaption>
         </figure>
       </div>
+
+      <figure className="photo group" style={{ "--tilt": "1.2deg" }}>
+        <img
+          src="/images/cohort.jpg"
+          width="1000"
+          height="750"
+          alt="My MECR training cohort, about twenty people in two rows, wearing colorful scarves and smiling in a classroom"
+          loading="lazy"
+        />
+        <figcaption>my MECR training cohort</figcaption>
+      </figure>
 
       <div className="about-top">
         <figure className="photo" style={{ "--tilt": "1.8deg" }}>
@@ -70,6 +82,23 @@ export default function About() {
           <p>This is my classroom from my last year of teaching, with hands-on materials on low shelves, plants, and a globe within reach. Every shelf was set up so a child could choose work, carry it to a table and put it back without asking for help.</p>
           <p>I took that way of working with me. Watch what people actually do, remove what gets in the way, and build the space so they can do it themselves.</p>
         </section>
+      </div>
+
+      <div className="about-top flip">
+        <section className="block first" aria-labelledby="s2-h">
+          <h2 id="s2-h">How I got into websites</h2>
+          <p>In March 2020 my co-teacher and I had to move a hands-on classroom onto a screen. We built a distance-learning program for more than 50 students, with handmade replicas of Montessori materials and virtual breakout rooms.</p>
+          <p>What surprised me was how much I liked the building. Friends who were software engineers told me I would be good at it. I started a computer science degree at Colorado State University in 2022, launched Katie Taylor Web Design that December, and graduated in August 2025.</p>
+        </section>
+        <figure className="photo" style={{ "--tilt": "-2.2deg" }}>
+          <img
+            src="/images/degrees.jpg"
+            width="800"
+            height="1000"
+            alt="Katie standing on a lawn holding two bachelor's degrees and a Montessori teaching credential"
+          />
+          <figcaption>two bachelor's degrees and a teaching credential</figcaption>
+        </figure>
       </div>
 
       <section className="block" aria-labelledby="s2c-h">
@@ -106,7 +135,7 @@ export default function About() {
         <ul className="snaps">
           {SNAPS.map((s, i) => (
             <li key={s.src}>
-              <figure className="photo" style={{ "--tilt": `${[-2, 1.8, 2.4, -1.6][i]}deg` }}>
+              <figure className="photo" style={{ "--tilt": `${[-2, 1.8, 2.4, -1.6, 1.4][i]}deg` }}>
                 <img src={s.src} width="800" height={s.h} alt={s.alt} loading="lazy" />
                 <figcaption>{s.cap}</figcaption>
               </figure>

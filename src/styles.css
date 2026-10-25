@@ -749,3 +749,6 @@ html[data-effects="off"] .static { opacity: 0.5; }
 /* Whiteboard photos hold small handwriting, so they run larger than snapshots. */
 .snaps.boards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 .snaps.boards .photo { width: min(100%, 440px); }
+
+/* A single wide group photo, centered below its section. */
+.photo.group { width: min(100%, 560px); margin: 28px auto; }
