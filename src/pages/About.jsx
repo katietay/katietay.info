@@ -4,7 +4,7 @@ import Consult from "../components/Consult.jsx";
 
 const SNAPS = [
   { src: "/images/sanfrancisco.jpg", h: 675, cap: "San Francisco", alt: "A row of colorful Victorian houses on a San Francisco street, with a white shuttle bus and a pickup truck passing in front" },
-  { src: "/images/canyon.jpg", h: 1067, cap: "sunset at the canyon", alt: "Sunset over a deep canyon, with pink and orange clouds above layered rock and dry shrubs in the foreground" },
+  { src: "/images/canyon.jpg", h: 1067, cap: "sunset at the Grand Canyon", alt: "Sunset over the Grand Canyon, with pink and orange clouds above layered rock and dry shrubs in the foreground" },
   { src: "/images/seattle.jpg", h: 1067, cap: "Seattle, Rainier on a clear day", alt: "Seattle waterfront with a ferry at the dock, the stadiums behind it, and snow-covered Mount Rainier in the distance" },
   { src: "/images/peace.jpg", h: 1000, cap: "hi", alt: "Katie in a yellow beanie and glasses, squinting and flashing a peace sign" },
   { src: "/images/latte.jpg", h: 1067, cap: "good latte, good day", alt: "A latte in a white cup on a red saucer with a smiley face in the foam" },
@@ -64,28 +64,29 @@ export default function About() {
           <h2 id="s1b-h">Training at MECR</h2>
           <p>I earned my AMS Elementary I credential in 2020 through the Montessori Education Center of the Rockies (MECR). Training meant learning every material by hand: practicing each lesson, building the sequences, and understanding why each one is shaped the way it is. These towers are from that time.</p>
         </section>
-        <figure className="photo" style={{ "--tilt": "-1.6deg" }}>
+        <div className="photo-stack">
+          <figure className="photo narrow" style={{ "--tilt": "-1.6deg" }}>
+            <img
+              src="/images/towers.jpg"
+              width="800"
+              height="1067"
+              alt="A pink wooden tower of graduated cubes standing next to a tower of stacked, colored bead cubes on a woven mat on a low wooden table"
+              loading="lazy"
+            />
+            <figcaption>towers from training</figcaption>
+          </figure>
+        <figure className="photo" style={{ "--tilt": "1.2deg" }}>
           <img
-            src="/images/towers.jpg"
-            width="800"
-            height="1067"
-            alt="A pink wooden tower of graduated cubes standing next to a tower of stacked, colored bead cubes on a woven mat on a low wooden table"
+            src="/images/cohort.jpg"
+            width="1000"
+            height="750"
+            alt="My MECR training cohort, about twenty people in two rows, wearing colorful scarves and smiling in a classroom"
             loading="lazy"
           />
-          <figcaption>towers from training</figcaption>
+          <figcaption>my MECR training cohort</figcaption>
         </figure>
+        </div>
       </div>
-
-      <figure className="photo group" style={{ "--tilt": "1.2deg" }}>
-        <img
-          src="/images/cohort.jpg"
-          width="1000"
-          height="750"
-          alt="My MECR training cohort, about twenty people in two rows, wearing colorful scarves and smiling in a classroom"
-          loading="lazy"
-        />
-        <figcaption>my MECR training cohort</figcaption>
-      </figure>
 
       <div className="about-top">
         <figure className="photo" style={{ "--tilt": "1.8deg" }}>
