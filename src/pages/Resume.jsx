@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Deck from "../components/Deck.jsx";
 
 // Dates follow LinkedIn. Edit entries here; the page renders from these lists.
@@ -184,9 +183,6 @@ export default function Resume() {
             <li key={t}><strong>{t}.</strong> {d}</li>
           ))}
         </ul>
-        <p className="proj-more">
-          <Link className="btn ghost" to="/portfolio">See all projects, code, and live demos</Link>
-        </p>
       </section>
 
       <section className="block" aria-labelledby="edu-h">

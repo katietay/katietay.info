@@ -15,7 +15,7 @@ const TEAM = [
 
 export default function CuckooColors() {
   return (
-    <Deck tapeId="portfolio" title="Cuckoo Colors" kicker="Project demo">
+    <Deck title="Cuckoo Colors" kicker="Project demo">
       <p className="lede">
         Cuckoo Colors makes printable activity sheets for vision therapy. You paint a pattern on a
         grid, and the app lists the cells for each color (for example "Red: A1, B3"). A person then
