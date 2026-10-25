@@ -22,6 +22,12 @@ export default function About() {
     <Deck tapeId="about" title="About">
       <p className="lede">I spent eight years in classrooms before I built my first client site.</p>
 
+      <section className="block first" aria-labelledby="s0-h">
+        <h2 id="s0-h">Where I grew up</h2>
+        <p>I grew up in rural East Texas in a large family, connected to nature and to community. Looking after each other and paying attention to the people and places around us was part of everyday life, not something we had to be taught. Those values stuck with me for the rest of my life.</p>
+        <p>They are a big part of why Montessori made sense to me when I found it, and why I still like working with small organizations, where the people are close and the work is for someone they can name.</p>
+      </section>
+
       <div className="about-top">
         <figure className="photo" style={{ "--tilt": "2deg" }}>
           <img
