@@ -93,7 +93,7 @@ export default function Home() {
       <section className="intro" aria-labelledby="intro-h">
         <figure className="photo" style={{ "--tilt": "2.5deg" }}>
           <img
-            src="/images/katie.jpg"
+            src="/images/katie-headshot.jpg"
             width="800"
             height="1000"
             alt="Katie smiling at the camera, wearing round tortoiseshell glasses and a green lace-trimmed top"
