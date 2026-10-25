@@ -119,7 +119,6 @@ export default function About() {
 
       <section className="block" aria-labelledby="s3-h">
         <h2 id="s3-h">What teaching taught me about building</h2>
-        <p>Teaching and web design turned out to be the same job in a lot of ways. In both, the work is to make something clear for a person who is not you.</p>
         <ul className="plain-list">
           <li>I set a site up the way I used to set up a room, so a visitor can find what they need without asking anyone.</li>
           <li>I check in early and honestly, the way I did with families.</li>
@@ -135,7 +134,7 @@ export default function About() {
 
       <section className="block" aria-labelledby="s5-h">
         <h2 id="s5-h">What I build for fun</h2>
-        <p>Outside client work I build things I wish existed. KnightOwlChess is an open-source chess app designed around accessibility. Cuckoo Colors, from my CS degree, makes printable vision therapy activity sheets. I am also learning Blender for 3D modeling, and when I need a break from screens I cook.</p>
+        <p>Outside client work I build things I wish existed. KnightOwlChess is an open-source chess app designed around accessibility. I am also learning Blender for 3D modeling, and when I need a break from screens I cook.</p>
         <p>If you have a project you are not sure how to start, I am happy to talk it through.</p>
       </section>
 
