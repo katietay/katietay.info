@@ -59,34 +59,24 @@ export default function About() {
         </section>
       </div>
 
-      <div className="about-top flip">
-        <section className="block first" aria-labelledby="s1b-h">
-          <h2 id="s1b-h">Training at MECR</h2>
-          <p>I earned my AMS Elementary I credential in 2020 through the Montessori Education Center of the Rockies (MECR). Training meant learning every material by hand: practicing each lesson, building the sequences, and understanding why each one is shaped the way it is. These towers are from that time.</p>
-        </section>
-        <div className="photo-stack">
-          <figure className="photo narrow" style={{ "--tilt": "-1.6deg" }}>
-            <img
-              src="/images/towers.jpg"
-              width="800"
-              height="1067"
-              alt="A pink wooden tower of graduated cubes standing next to a tower of stacked, colored bead cubes on a woven mat on a low wooden table"
-              loading="lazy"
-            />
-            <figcaption>towers from training</figcaption>
-          </figure>
-        <figure className="photo" style={{ "--tilt": "1.2deg" }}>
-          <img
-            src="/images/cohort.jpg"
-            width="1000"
-            height="750"
-            alt="My MECR training cohort, about twenty people in two rows, wearing colorful scarves and smiling in a classroom"
-            loading="lazy"
-          />
-          <figcaption>my MECR training cohort</figcaption>
-        </figure>
-        </div>
-      </div>
+      <section className="block" aria-labelledby="s1b-h">
+        <h2 id="s1b-h">Training at MECR</h2>
+        <p>I earned my AMS Elementary I credential in 2020 through the Montessori Education Center of the Rockies (MECR). Training meant learning every material by hand: practicing each lesson, building the sequences, and understanding why each one is shaped the way it is. These towers are from that time.</p>
+        <ul className="snaps scrap kids">
+          <li>
+            <figure className="photo" style={{ "--tilt": "1.6deg" }}>
+              <img src="/images/towers.jpg" width="800" height="1067" alt="A pink wooden tower of graduated cubes standing next to a tower of stacked, colored bead cubes on a woven mat on a low wooden table" loading="lazy" />
+              <figcaption>towers from training</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure className="photo" style={{ "--tilt": "-1.4deg" }}>
+              <img src="/images/cohort.jpg" width="1000" height="750" alt="My MECR training cohort, about twenty people in two rows, wearing colorful scarves and smiling in a classroom" loading="lazy" />
+              <figcaption>my MECR training cohort</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
 
       <div className="about-top">
         <figure className="photo" style={{ "--tilt": "1.8deg" }}>
