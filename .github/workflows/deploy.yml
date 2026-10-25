@@ -61,7 +61,9 @@ jobs:
           done
           install -d -m 700 ~/.ssh
           printf '%s\n' "$SFTP_PRIVATE_KEY" > ~/.ssh/deploy_key
-          printf '%s\n' "$SFTP_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          # One host entry on one line, even if the pasted secret picked up a line break or trailing newline.
+          printf '%s' "$SFTP_KNOWN_HOSTS" | tr '\n\r' '  ' | tr -s ' ' | sed 's/^ //; s/ $//' > ~/.ssh/known_hosts
+          echo >> ~/.ssh/known_hosts
           chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
           REMOTE="${SFTP_REMOTE_DIR%/}"
           # The Cuckoo Colors app lives in /colors/ on the same host, so this job never deletes at the
