@@ -41,7 +41,7 @@ jobs:
     # Secrets are only set on this repository, never exposed to forks or pull requests.
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: site
           path: dist
