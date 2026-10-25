@@ -758,3 +758,6 @@ html[data-effects="off"] .static { opacity: 0.5; }
 .snaps.scrap > li { padding-top: 22px; margin: 0 0 20px; flex: 0 0 216px; max-width: 100%; }
 .snaps.scrap .photo { width: 100%; }
 .snaps.boards.scrap > li { flex-basis: 340px; }
+
+.photo-stack { display: grid; gap: 28px; justify-items: center; align-content: start; }
+.photo-stack .photo { width: 100%; }

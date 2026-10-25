@@ -3,7 +3,8 @@ import Deck from "../components/Deck.jsx";
 import Consult from "../components/Consult.jsx";
 
 const SNAPS = [
-  { src: "/images/desk.jpg", h: 600, cap: "the desk", alt: "Katie working on a laptop in an armchair" },
+  { src: "/images/sanfrancisco.jpg", h: 675, cap: "San Francisco", alt: "A row of colorful Victorian houses on a San Francisco street, with a white shuttle bus and a pickup truck passing in front" },
+  { src: "/images/canyon.jpg", h: 1067, cap: "sunset at the canyon", alt: "Sunset over a deep canyon, with pink and orange clouds above layered rock and dry shrubs in the foreground" },
   { src: "/images/seattle.jpg", h: 1067, cap: "Seattle, Rainier on a clear day", alt: "Seattle waterfront with a ferry at the dock, the stadiums behind it, and snow-covered Mount Rainier in the distance" },
   { src: "/images/peace.jpg", h: 1000, cap: "hi", alt: "Katie in a yellow beanie and glasses, squinting and flashing a peace sign" },
   { src: "/images/latte.jpg", h: 1067, cap: "good latte, good day", alt: "A latte in a white cup on a red saucer with a smiley face in the foam" },
@@ -24,8 +25,22 @@ export default function About() {
 
       <section className="block first" aria-labelledby="s0-h">
         <h2 id="s0-h">Where I grew up</h2>
-        <p>I grew up in rural East Texas in a large family, connected to nature and to community. Looking after each other and paying attention to the people and places around us was part of everyday life, not something we had to be taught. Those values stuck with me for the rest of my life.</p>
+        <p>I grew up in rural East Texas in a large, tight-knit family, connected to nature and to community. We went camping a lot and played in the creek, and I was homeschooled until fifth grade. We played games together, and I played soccer growing up. Looking after each other and paying attention to the people and places around us was part of everyday life, not something we had to be taught. Those values stuck with me for the rest of my life.</p>
         <p>They are a big part of why Montessori made sense to me when I found it, and why I still like working with small organizations, where the people are close and the work is for someone they can name.</p>
+        <ul className="snaps scrap kids">
+          <li>
+            <figure className="photo" style={{ "--tilt": "-1.8deg" }}>
+              <img src="/images/couch.jpg" width="604" height="583" alt="Six children piled together on a brown couch in front of a Christmas tree, smiling, with arms around each other" loading="lazy" />
+              <figcaption>the couch</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure className="photo" style={{ "--tilt": "1.6deg" }}>
+              <img src="/images/playground.jpg" width="719" height="569" alt="Four children resting on the grass at a playground, one asleep with his head on another's lap" loading="lazy" />
+              <figcaption>the playground</figcaption>
+            </figure>
+          </li>
+        </ul>
       </section>
 
       <div className="about-top">
@@ -97,6 +112,7 @@ export default function About() {
           <p>What surprised me was how much I liked the building. Friends who were software engineers told me I would be good at it. I started a computer science degree at Colorado State University in 2022, launched Katie Taylor Web Design that December, and graduated in August 2025.</p>
           <p>Those three years were full. I worked as a web developer for Off-Campus Life, coordinated food operations for RamRide, and ran my own business, all while taking classes. It taught me to scope work honestly and to keep every project moving without letting anything drop.</p>
         </section>
+        <div className="photo-stack">
         <figure className="photo" style={{ "--tilt": "-2.2deg" }}>
           <img
             src="/images/degrees.jpg"
@@ -106,6 +122,11 @@ export default function About() {
           />
           <figcaption>two bachelor's degrees and a teaching credential</figcaption>
         </figure>
+          <figure className="photo" style={{ "--tilt": "1.8deg" }}>
+            <img src="/images/desk.jpg" width="1000" height="750" alt="Katie working on a laptop in an armchair" loading="lazy" />
+            <figcaption>the desk</figcaption>
+          </figure>
+        </div>
       </div>
 
       <section className="block" aria-labelledby="s2c-h">
@@ -138,18 +159,24 @@ export default function About() {
         </p>
       </section>
 
-      <section className="block" aria-labelledby="s5-h">
-        <h2 id="s5-h">What I build for fun</h2>
-        <p>Outside client work I build things I wish existed. KnightOwlChess is an open-source chess app designed around accessibility. I am also learning Blender for 3D modeling, and when I need a break from screens I cook.</p>
-        <p>If you have a project you are not sure how to start, I am happy to talk it through.</p>
-      </section>
+      <div className="about-top flip">
+        <section className="block first" aria-labelledby="s5-h">
+          <h2 id="s5-h">Outside of work</h2>
+          <p>These days I spend as much time outdoors as I can. I also read, play roller derby and dodgeball, spend time with friends, and make new things. Some of that is software, like KnightOwlChess, an open-source chess app designed around accessibility. Some of it is learning Blender for 3D modeling, and some of it is cooking.</p>
+          <p>If you have a project you are not sure how to start, I am happy to talk it through.</p>
+        </section>
+        <figure className="photo" style={{ "--tilt": "1.8deg" }}>
+          <img src="/images/breckenridge.jpg" width="900" height="716" alt="A turquoise lake below snow-dusted mountains under big clouds, framed by pine trees" loading="lazy" />
+          <figcaption>Breckenridge</figcaption>
+        </figure>
+      </div>
 
       <section className="block" aria-labelledby="s4-h">
         <h2 id="s4-h">Snapshots</h2>
         <ul className="snaps scrap">
           {SNAPS.map((s, i) => (
             <li key={s.src}>
-              <figure className="photo" style={{ "--tilt": `${[-2, 1.8, 2.4, -1.6, 1.4][i]}deg` }}>
+              <figure className="photo" style={{ "--tilt": `${[-2, 1.8, 2.4, -1.6, 1.4, -1.2][i]}deg` }}>
                 <img src={s.src} width="800" height={s.h} alt={s.alt} loading="lazy" />
                 <figcaption>{s.cap}</figcaption>
               </figure>
