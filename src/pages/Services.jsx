@@ -26,6 +26,7 @@ const ASKS = [
 
 const FAQ = [
   ["Can you work on the site I already have?", "Yes. I work inside WordPress, Wix, Squarespace, and Shopify sites all the time, and I will tell you honestly whether a cleanup or a rebuild makes more sense."],
+  ["What if I don't see my hosting platform or website builder on your list?", "The lists above are what I have used most, not the limit of what I can work in. If your site runs on something else, tell me during the free consult. With some advance notice I am glad to learn a new system before the work starts, and I will tell you up front how that affects the timeline."],
   ["What do you need from me?", "Access to your site and accounts, one person who can answer questions and approve work, and your content and feedback on time. You do not need to know anything technical."],
   ["What happens after launch?", "You can update the site yourself with the guides I write, hire me hourly when you need help, or use the monthly care plan."],
 ];

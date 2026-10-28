@@ -70,7 +70,7 @@ export default function CuckooColors() {
 
       <h2>Credits</h2>
       <p>CS 312 Team 28:</p>
-      <ul>
+      <ul className="credits">
         {TEAM.map((m) => (
           <li key={m.handle}>
             {m.name} (<a href={m.url} target="_blank" rel="noreferrer">{m.handle}<NewTab /></a>)

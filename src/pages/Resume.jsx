@@ -148,6 +148,7 @@ export default function Resume() {
         <li>katie@katietaylor.info</li>
         <li><a href="https://www.linkedin.com/in/katherinetaylor24/" target="_blank" rel="noreferrer">LinkedIn<span className="visually-hidden"> (opens in a new tab)</span></a></li>
         <li><a href="https://github.com/katietay/" target="_blank" rel="noreferrer">GitHub<span className="visually-hidden"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.instagram.com/katietaylorwebdesign/" target="_blank" rel="noreferrer">Instagram<span className="visually-hidden"> (opens in a new tab)</span></a></li>
       </ul>
 
       <section className="block" aria-labelledby="skills-h">

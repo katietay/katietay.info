@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home.jsx";
 import Resume from "./pages/Resume.jsx";
+import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
 import CuckooColors from "./pages/CuckooColors.jsx";
 import { useEffects } from "./effects.jsx";
@@ -11,6 +12,7 @@ const TITLES = {
   "/": "Katie Taylor Web Design",
   "/resume": "Resume | Katie Taylor",
   "/services": "Services and pricing | Katie Taylor Web Design",
+  "/about": "About | Katie Taylor Web Design",
   "/cuckoo-colors": "Cuckoo Colors | Katie Taylor Web Design",
 };
 
@@ -56,7 +58,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/services" element={<Services />} />
-            {/* Portfolio and About are hidden for now (files kept in src/pages). */}
+            <Route path="/about" element={<About />} />
+            {/* Portfolio is hidden for now (file kept in src/pages). */}
             {/* Not in the tape menu on purpose; reachable only by its address. */}
             <Route path="/cuckoo-colors" element={<CuckooColors />} />
             <Route path="*" element={<Navigate to="/" replace />} />

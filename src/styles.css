@@ -763,3 +763,9 @@ html[data-effects="off"] .static { opacity: 0.5; }
 .photo-stack .photo { width: 100%; }
 .photo-stack .photo.narrow { width: 150px; }
 .cta-row { margin-bottom: 8px; }
+
+/* Touch targets: inline contact and credit links get a taller tap area on phones */
+@media (max-width: 700px) {
+  .contact { gap: 0 8px; }
+  .contact a, .credits a { display: inline-block; padding: 11px 6px; }
+}

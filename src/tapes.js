@@ -1,5 +1,5 @@
-// The menu tapes. Portfolio and About are hidden for now: their pages and tapes
-// are removed from the menu and routes, and the page files stay in src/pages.
+// The menu tapes. Portfolio is hidden for now: its page and tape are removed from
+// the menu and routes, and the page file stays in src/pages.
 // `hand` is how crooked the handwriting is, in degrees.
 // `wear` picks which corner of the paper label is torn: "tr", "bl", or "none".
 export const TAPES = [
@@ -13,6 +13,17 @@ export const TAPES = [
     hand: -2.5,
     tilt: -2.2,
     nudge: 14,
+  },
+  {
+    id: "about",
+    path: "/about",
+    label: "About",
+    osd: "ABOUT",
+    runtime: "T-160",
+    wear: "none",
+    hand: 1.5,
+    tilt: 1.4,
+    nudge: -10,
   },
   {
     id: "resume",

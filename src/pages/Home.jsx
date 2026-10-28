@@ -93,10 +93,10 @@ export default function Home() {
       <section className="intro" aria-labelledby="intro-h">
         <figure className="photo" style={{ "--tilt": "2.5deg" }}>
           <img
-            src="/images/katie-headshot.jpg"
+            src="/images/katie-illustration.webp"
             width="800"
             height="1000"
-            alt="Katie smiling at the camera, wearing round tortoiseshell glasses and a green lace-trimmed top"
+            alt="Illustration of Katie with blue hair and round glasses, smiling over her shoulder from a desk with a large monitor full of code"
           />
           <figcaption>Katie, Redmond WA</figcaption>
         </figure>
